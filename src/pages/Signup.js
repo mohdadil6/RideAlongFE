@@ -11,7 +11,7 @@ function Signup() {
     e.preventDefault();
 
     // send a POST request to the backend API
-    fetch("http://ridealongjar-env.eba-eh6uzn48.ap-south-1.elasticbeanstalk.com/api/riders", {
+    fetch("Ra-env.eba-rgxn4fnm.ap-south-1.elasticbeanstalk.com/api/riders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
