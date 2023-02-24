@@ -7,7 +7,7 @@ function Api() {
 
   useEffect(() => {
     const fetchRiders = async () => {
-      const response = await axios.get(`http://localhost:8080/api/riders?email=${email}`);
+      const response = await axios.get(`http://ridealongjar-env.eba-eh6uzn48.ap-south-1.elasticbeanstalk.com/api/riders?email=${email}`);
       setRiders(response.data);
     };
     fetchRiders();
@@ -22,7 +22,7 @@ function Api() {
       email: 'newrider@example.com',
       password: 'password'
     };
-    const response = await axios.post('http://localhost:8080/api/riders', newRider);
+    const response = await axios.post('http://ridealongjar-env.eba-eh6uzn48.ap-south-1.elasticbeanstalk.com/api/riders', newRider);
     setRiders([...riders, response.data]);
   };
 
@@ -31,13 +31,13 @@ function Api() {
       email: 'updatedrider@example.com',
       password: 'newpassword'
     };
-    const response = await axios.put(`http://localhost:8080/api/riders/${id}`, updatedRider);
+    const response = await axios.put(`http://ridealongjar-env.eba-eh6uzn48.ap-south-1.elasticbeanstalk.com/api/riders/${id}`, updatedRider);
     const updatedRiders = riders.map(rider => (rider.id === id ? response.data : rider));
     setRiders(updatedRiders);
   };
 
   const handleDeleteRider = async (id) => {
-    await axios.delete(`http://localhost:8080/api/riders/${id}`);
+    await axios.delete(`http://ridealongjar-env.eba-eh6uzn48.ap-south-1.elasticbeanstalk.com/api/riders/${id}`);
     const updatedRiders = riders.filter(rider => rider.id !== id);
     setRiders(updatedRiders);
   };
@@ -58,5 +58,4 @@ function Api() {
     </div>
   );
 }
-
 export default Api;

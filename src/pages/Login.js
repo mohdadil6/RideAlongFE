@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:8080/api/riders/login', {
+      const response = await fetch('http://ridealongjar-env.eba-eh6uzn48.ap-south-1.elasticbeanstalk.com/api/riders/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
