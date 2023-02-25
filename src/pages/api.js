@@ -7,7 +7,7 @@ function Api() {
 
   useEffect(() => {
     const fetchRiders = async () => {
-      const response = await axios.get(`http://ridealongjar-env.eba-eh6uzn48.ap-south-1.elasticbeanstalk.com/api/riders?email=${email}`);
+      const response = await axios.get(`Ra-env.eba-rgxn4fnm.ap-south-1.elasticbeanstalk.com/api/riders?email=${email}`);
       setRiders(response.data);
     };
     fetchRiders();
